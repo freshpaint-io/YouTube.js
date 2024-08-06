@@ -267,7 +267,6 @@ export default class Session extends EventEmitter {
       options.client_type,
       options.timezone,
       options.fetch,
-      options.po_token,
       options.on_behalf_of_user,
       options.cache,
       options.enable_session_cache,
