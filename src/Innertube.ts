@@ -67,6 +67,7 @@ export default class Innertube {
   }
 
   static async create(config: InnertubeConfig = {}): Promise<Innertube> {
+    console.log("Innertube.create config", config);
     return new Innertube(await Session.create(config));
   }
 

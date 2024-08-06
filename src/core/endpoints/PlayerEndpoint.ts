@@ -8,6 +8,7 @@ export const PATH = '/player';
  * @returns The payload.
  */
 export function build(opts: PlayerEndpointOptions): IPlayerRequest {
+console.log("PlayerEndpoint.build opts", opts);
   return {
     playbackContext: {
       contentPlaybackContext: {
@@ -39,7 +40,8 @@ export function build(opts: PlayerEndpointOptions): IPlayerRequest {
       playlistId: opts.playlist_id,
       params: opts.params,
       serviceIntegrityDimensions: {
-        poToken: opts.po_token || ''
+        // poToken: opts.po_token || ''
+        poToken: 'MnRhJfTBkKDhimEd8QPWrgY7kaBgqvolxv07Z98L9WAX3J8hDkGWFBY-htMzVaqSWjsJvarDTDJd1bQt-gclTSQ067DL4csWxYc_XdSXlQ8TDAob7PBUpxegXATHjK13PfFl2QN27tuLXZX3uv7L6an16fTW2Q=='
       }
     }
   };

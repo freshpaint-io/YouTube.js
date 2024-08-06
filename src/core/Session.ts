@@ -256,6 +256,7 @@ export default class Session extends EventEmitter {
   }
 
   static async create(options: SessionOptions = {}) {
+    console.log("Session.create options", options);
     const { context, api_key, api_version, account_index } = await Session.getSessionData(
       options.lang,
       options.location,
@@ -286,6 +287,7 @@ export default class Session extends EventEmitter {
    * @param session_args - User provided session arguments.
    */
   static async fromCache(cache: ICache, session_args: SessionArgs): Promise<SessionData | null> {
+    console.log("Session.fromCache session_args", session_args);
     const buffer = await cache.get('innertube_session_data');
 
     if (!buffer)
@@ -337,6 +339,7 @@ export default class Session extends EventEmitter {
     enable_session_cache = true,
     po_token?: string
   ) {
+    console.log("Session.getSessionData po_token", po_token);
     const session_args = { lang, location, time_zone: tz, device_category, client_name, enable_safety_mode, visitor_data, on_behalf_of_user, po_token };
 
     let session_data: SessionData | undefined;
@@ -414,6 +417,7 @@ export default class Session extends EventEmitter {
   }
 
   static async #getSessionData(options: SessionArgs, fetch: FetchFunction = Platform.shim.fetch): Promise<SWSessionData> {
+    console.log("Session.#getSessionData options", options);
     let visitor_id = generateRandomString(11);
 
     if (options.visitor_data)
