@@ -52,6 +52,10 @@ export type PlayerEndpointOptions = {
    * Additional protobuf parameters.
    */
   params?: string;
+  /**
+   * Token for serviceIntegrityDimensions
+   */
+  po_token?: string;
 }
 
 export type NextEndpointOptions = {
