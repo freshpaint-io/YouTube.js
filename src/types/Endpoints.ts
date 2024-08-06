@@ -29,6 +29,9 @@ export interface IPlayerRequest {
   playlistId?: string;
   params?: string;
   client?: InnerTubeClient;
+  serviceIntegrityDimensions?: {
+    poToken: string
+  }
 }
 
 export type PlayerEndpointOptions = {
