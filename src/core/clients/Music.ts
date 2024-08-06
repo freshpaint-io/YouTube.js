@@ -57,6 +57,7 @@ export default class Music {
     const player_payload = PlayerEndpoint.build({
       video_id,
       sts: this.#session.player?.sts,
+      po_token: this.#session.player?.po_token,
       client: 'YTMUSIC'
     });
 

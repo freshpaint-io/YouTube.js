@@ -37,6 +37,7 @@ export default class Kids {
   async getInfo(video_id: string): Promise<VideoInfo> {
     const player_payload = PlayerEndpoint.build({
       sts: this.#session.player?.sts,
+      po_token: this.#session.player?.po_token,
       client: 'YTKIDS',
       video_id
     });
