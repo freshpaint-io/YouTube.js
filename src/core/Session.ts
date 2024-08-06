@@ -176,6 +176,10 @@ export type SessionOptions = {
    * Fetch function to use.
    */
   fetch?: FetchFunction;
+  /**
+   * Token for serviceIntegrityDimensions
+   */
+  po_token?: string;
 }
 
 export type SessionData = {
@@ -214,11 +218,12 @@ export default class Session extends EventEmitter {
   logged_in: boolean;
   actions: Actions;
   cache?: ICache;
+  po_token?: string;
   key: string;
   api_version: string;
   account_index: number;
 
-  constructor(context: Context, api_key: string, api_version: string, account_index: number, player?: Player, cookie?: string, fetch?: FetchFunction, cache?: ICache) {
+  constructor(context: Context, api_key: string, api_version: string, account_index: number, player?: Player, cookie?: string, fetch?: FetchFunction, cache?: ICache, po_token?: string) {
     super();
     this.http = new HTTPClient(this, cookie, fetch);
     this.actions = new Actions(this);
@@ -230,6 +235,7 @@ export default class Session extends EventEmitter {
     this.api_version = api_version;
     this.context = context;
     this.player = player;
+    this.po_token = po_token;
   }
 
   on(type: 'auth', listener: OAuth2AuthEventHandler): void;
@@ -263,7 +269,8 @@ export default class Session extends EventEmitter {
       options.fetch,
       options.on_behalf_of_user,
       options.cache,
-      options.enable_session_cache
+      options.enable_session_cache,
+      options.po_token
     );
 
     return new Session(
@@ -327,9 +334,10 @@ export default class Session extends EventEmitter {
     fetch: FetchFunction = Platform.shim.fetch,
     on_behalf_of_user?: string,
     cache?: ICache,
-    enable_session_cache = true
+    enable_session_cache = true,
+    po_token?: string
   ) {
-    const session_args = { lang, location, time_zone: tz, device_category, client_name, enable_safety_mode, visitor_data, on_behalf_of_user };
+    const session_args = { lang, location, time_zone: tz, device_category, client_name, enable_safety_mode, visitor_data, on_behalf_of_user, po_token };
 
     let session_data: SessionData | undefined;
 
