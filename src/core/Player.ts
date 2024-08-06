@@ -12,12 +12,14 @@ export default class Player {
   sig_sc;
   sts;
   player_id;
+  po_token;
 
-  constructor(signature_timestamp: number, sig_sc: string, nsig_sc: string, player_id: string) {
+  constructor(signature_timestamp: number, sig_sc: string, nsig_sc: string, player_id: string, po_token: string) {
     this.nsig_sc = nsig_sc;
     this.sig_sc = sig_sc;
     this.sts = signature_timestamp;
     this.player_id = player_id;
+    this.po_token = po_token;
   }
 
   static async create(cache: ICache | undefined, fetch: FetchFunction = Platform.shim.fetch): Promise<Player> {
