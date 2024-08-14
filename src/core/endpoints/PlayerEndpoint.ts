@@ -41,7 +41,7 @@ console.log("PlayerEndpoint.build opts", opts);
       params: opts.params,
       serviceIntegrityDimensions: {
         // poToken: opts.po_token || ''
-        poToken: 'MnQ4Na5bUTdj0jgNJfaU-EAMBPlCoL4kquS2eXUkVOhckq7c4pZ9lxhAI37cOT0beOJ4YZOreqxkk7yjx8UKT22DFIuxQ0UAYc-Vu_Of11-N2PhjbXHOEAl4-7kwmKm_zZTx83ytsDmngLLDhL1Hae7R7JX5zg=='
+        poToken: 'MnQYZMBGJ9W-VxhcXkBTMWUcwYeokDuDRWDiZ-VEFuNgKwPS4KHAevnqQKUWd1Olwo_XZr4ng3B-Wx3rbS4uD1CgrGyzpIMi29kB2C_MpV5X0Uhqe_7Ip-DceCt6XgpIivSvXkmPF3C_4Czoc3yJ62FKTFSAdQ=='
       }
     }
   };
