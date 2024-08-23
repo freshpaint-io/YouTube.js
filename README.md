@@ -221,7 +221,7 @@ const yt = await Innertube.create({
   
   * [.session](https://github.com/LuanRT/YouTube.js/blob/main/docs/API/session.md)
   * [.account](https://github.com/LuanRT/YouTube.js/blob/main/docs/API/account.md)
-  * [.interact](https://github.com/LuanRT/YouTube.js/blob/main/docs/API/interaction-manager.md)
+  * [.interaction](https://github.com/LuanRT/YouTube.js/blob/main/docs/API/interaction-manager.md)
   * [.playlist](https://github.com/LuanRT/YouTube.js/blob/main/docs/API/playlist.md)
   * [.music](https://github.com/LuanRT/YouTube.js/blob/main/docs/API/music.md)
   * [.studio](https://github.com/LuanRT/YouTube.js/blob/main/docs/API/studio.md)
